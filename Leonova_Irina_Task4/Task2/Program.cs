@@ -4,99 +4,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task3
+namespace Task2
 {
-    //Написать класс, описывающий треугольник со сторонами a, b, c,
-    //и методами, позволяющими осуществить расчёт его площади и периметра.
-
-    class Triangle
+    //Написать класс Round, задающий круг с указанными координатами центра,
+    //радиусом, а также свойствами, позволяющими узнать длину описанной окружности и площадь круга.
+    class Round
     {
-        private float a;
-        private float b;
-        private float c;
+        private double radius;
+        private float CenterX { get; set; }
+        private float CenterY { get; set; }
+        private float CenterZ { get; set; }
 
-        public float A
+        public double Radius
         {
-            set
-            {
-                if (a <= 0)
-                {
-                    Console.WriteLine("У треугольника нет отрицательных сторон");
-                }
-                else if (b + c < a)
-                {
-                    Console.WriteLine("сумма 2х сторон треугольника должна быть больше третьей");
-                }
-                else 
-                {
-                   a = value;
-                }
-            }
             get
             {
-                return a;
+                return radius;
             }
-        }
-        public float B
-        {
+
             set
             {
-                if (b <= 0)
+                try
                 {
-                    Console.WriteLine("У треугольника нет отрицательных сторон");
+                    if (value > 1000)
+                    {
+                        throw new Exception("Не многовато ли?");
+                    }
+                    else if (value <= 0)
+                    {
+                        throw new Exception("Таких радиусов не бывает");
+                    }
+
+                    else
+                    {
+
+                        radius = value;
+                    }
                 }
-                else if (a + c < b)
+                catch (Exception e)
                 {
-                    Console.WriteLine("сумма 2х сторон треугольника должна быть больше третьей");
+                    Console.WriteLine("Ошибка: " + e.Message);
                 }
-                else
-                {
-                    b = value;
-                }
-            }
-            get
-            {
-                return b;
-            }
-        }
-        public float C
-        {
-            set
-            {
-                if (c <= 0)
-                {
-                    Console.WriteLine("У треугольника нет отрицательных сторон");
-                }
-                else if (b + a < c)
-                {
-                    Console.WriteLine("сумма 2х сторон треугольника должна быть больше третьей");
-                }
-                else
-                {
-                    c = value;
-                }
-            }
-            get
-            {
-                return c;
             }
         }
 
-        public double Square
+        public double Length
         {
             get
             {
-                double p = 0.5 * (a + b + c);
-                return Math.Sqrt(p*(p-a)*(p-b)*(p-c));
+                return radius*2*Math.PI;
             }
         }
-        public double Perimeter
+
+        public double Squad
         {
             get
             {
-                return a+b+c;
+                return Math.Pow(radius,2) * Math.PI;
             }
         }
+        
     }
     class Program
     {

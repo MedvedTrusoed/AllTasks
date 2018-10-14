@@ -2,130 +2,124 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Task1
+namespace Task3
 {
-    //Написать класс User, описывающий человека(Фамилия, Имя, Отчество, Дата рождения, Возраст). 
-    //Написать программу, демонстрирующую использование этого класса
+    //Написать класс, описывающий треугольник со сторонами a, b, c,
+    //и методами, позволяющими осуществить расчёт его площади и периметра.
 
-    public class User
+    class Triangle
     {
-        private string name;
-        private string surname;
-        private string patronymic;
-        private DateTime birthday;
-        private int age;
+        private float a;
+        private float b;
+        private float c;
 
-        public string Name
+        public float A
         {
+            set
+            {
+                try
+                {
+                    if (value <= 0)
+                    {
+                        throw new Exception("У треугольника нет отрицательных сторон");
+                    }
+                    else if (b + c < value)
+                    {
+                        throw new Exception("сумма 2х сторон треугольника должна быть больше третьей");
+                    }
+                    else
+                    {
+                        a = value;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка: " + e.Message);
+                }
+            }
             get
             {
-                return name;
+                return a;
             }
+        }
+        public float B
+        {
 
             set
             {
-                if (name == string.Empty)
+                try
                 {
-                    Console.WriteLine("Имя не должно быть пустым");
+                    if (value <= 0)
+                    {
+                        throw new Exception("У треугольника нет отрицательных сторон");
+                    }
+                    else if (a + c < value)
+                    {
+                        throw new Exception("сумма 2х сторон треугольника должна быть больше третьей");
+                    }
+                    else
+                    {
+                        b = value;
+                    }
                 }
-                else if (Regex.IsMatch(name, @"\d"))
+                catch (Exception e)
                 {
-                    Console.WriteLine("Имя не может состоять из цифр");
-                }
-                else
-                {
-                    name = name.Substring(0, 1).ToUpper() + name.Remove(0, 1);
-                    name = value;
+                    Console.WriteLine("Ошибка: " + e.Message);
                 }
             }
-        }
-
-        public string Surname
-        {
             get
             {
-                return surname;
+                return b;
             }
-
+        }
+        public float C
+        {
             set
             {
-                if (surname == string.Empty)
+                try
                 {
-                    Console.WriteLine("Фамилия не должно быть пустым");
+                    if (value <= 0)
+                    {
+                        throw new Exception("У треугольника нет отрицательных сторон");
+                    }
+                    else if (b + a < value)
+                    {
+                        throw new Exception("сумма 2х сторон треугольника должна быть больше третьей");
+                    }
+                    else
+                    {
+                        c = value;
+                    }
                 }
-                else if (Regex.IsMatch(surname, @"\d"))
+                catch (Exception e)
                 {
-                    Console.WriteLine("Фамилия не может состоять из цифр");
+                    Console.WriteLine("Ошибка: " + e.Message);
                 }
-                else
-                {
-                    surname = surname.Substring(0, 1).ToUpper() + surname.Remove(0, 1);
-                    surname = value;
-                }
+            }
+            get
+            {
+                return c;
             }
         }
 
-        public int Age
+        public double Square
         {
             get
             {
-                
-                return age = DateTime.Now.Year-birthday.Year; ;
-            }
-
-        }
-
-        public string Patronymic
-        {
-            get
-            {
-                return patronymic;
-            }
-
-            set
-            {
-                if (Regex.IsMatch(patronymic, @"\d"))
-                {
-                    Console.WriteLine("Отчество не может состоять из цифр");
-                }
-                else
-                {
-                    patronymic = patronymic.Substring(0, 1).ToUpper() + patronymic.Remove(0, 1);
-                    patronymic = value;
-                }
+                double p = 0.5 * (a + b + c);
+                return Math.Sqrt(p*(p-a)*(p-b)*(p-c));
             }
         }
-        public DateTime Birthday
+        public double Perimeter
         {
             get
             {
-                return birthday;
-            }
-
-            set
-            {
-                if (birthday > DateTime.Now)
-                {
-                    Console.WriteLine("Ты еще не родился! Сначала родись, а потом и врать научись");
-                }
-                else if (birthday.Year < (DateTime.Now.Year - 146))
-                {
-                    Console.WriteLine("У нас новый рекордсмен? как же");
-
-                }
-                else
-                {
-                    birthday = value;
-                }
+                return a+b+c;
             }
         }
     }
-
-
-
     class Program
     {
         static void Main(string[] args)

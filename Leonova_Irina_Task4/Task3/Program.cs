@@ -15,7 +15,7 @@ namespace Task1
         private string name;
         private string surname;
         private string patronymic;
-        private string birtday;
+        private DateTime birthday;
         private int age;
 
         public string Name
@@ -72,27 +72,10 @@ namespace Task1
         {
             get
             {
-                return age;
-            }
-
-            set
-            {
-
-                 if (age>146)
-                {
-                    Console.WriteLine("Вы не рекордсмен");
-                }
-                else if(age <= 0)
-                {
-                    Console.WriteLine("Ваш возраст должен быть меньше 0");
-                }
                 
-                else
-                {
-                    
-                    age = value;
-                }
+                return age = DateTime.Now.Year-birthday.Year; ;
             }
+
         }
 
         public string Patronymic
@@ -115,8 +98,33 @@ namespace Task1
                 }
             }
         }
+        public DateTime Birthday
+        {
+            get
+            {
+                return birthday;
+            }
 
+            set
+            {
+                if (birthday > DateTime.Now)
+                {
+                    Console.WriteLine("Ты еще не родился! Сначала родись, а потом и врать научись");
+                }
+                else if (birthday.Year < (DateTime.Now.Year - 146))
+                {
+                    Console.WriteLine("У нас новый рекордсмен? как же");
+
+                }
+                else
+                {
+                    birthday = value;
+                }
+            }
+        }
     }
+
+
 
     class Program
     {

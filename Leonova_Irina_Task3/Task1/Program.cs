@@ -8,16 +8,14 @@ namespace Task1
 {
     class Program
     {
-        static int AvrLength(int[] lengthStr, string[] words)
+        static int AvrLength(string[] words)
         {
             int avr = 0;
             int sum = 0;
 
             for (int i = 0; i < words.Length; i++)
             {
-                lengthStr[i] = words[i].Length;
-
-                sum += lengthStr[i];
+                sum += words[i].Length;
 
             }
 
@@ -31,6 +29,7 @@ namespace Task1
             string text = string.Empty;
             int avr = 0;
             bool check = false;
+            char[] punktuation = new char[129];
 
             Console.WriteLine("Вещайте");
 
@@ -47,10 +46,21 @@ namespace Task1
                     check = false;
                 }
             }
-            string[] words = text.Split(new char[] { ' ', '.', ',', '!', '?', '-', ':', ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < 128; i++)
+            {
+                if (char.IsPunctuation((char)i))
+                {
+                    punktuation[i] = (char)i;
+                }
+
+            }
+            punktuation[128] = ' ';
+
+            string[] words = text.Split(punktuation, StringSplitOptions.RemoveEmptyEntries);
 
 
-            avr = AvrLength(lengthStr, words);
+            avr = AvrLength(words);
 
             Console.WriteLine($"Средняя длина твоих слов = {avr} А подлиннее можешь?");
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace Task5
 {
@@ -24,7 +25,7 @@ namespace Task5
             //htmlStr2 = Regex.Replace(htmlStr2, @"<.*?> | <\/.*?> ", "_");
 
             //Console.WriteLine(htmlStr2);
-
+            //!!!!!!!!!!!!!!!!!!!Stopwatch sw = new Stopwatch();
             Console.WriteLine(htmlStr);
         }
     }

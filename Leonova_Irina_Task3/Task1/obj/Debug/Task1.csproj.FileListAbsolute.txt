@@ -1,0 +1,7 @@
+C:\Users\Ирина\source\repos\Leonova_Irina_Task3\Task1\bin\Debug\Task1.exe.config
+C:\Users\Ирина\source\repos\Leonova_Irina_Task3\Task1\bin\Debug\Task1.exe
+C:\Users\Ирина\source\repos\Leonova_Irina_Task3\Task1\bin\Debug\Task1.pdb
+C:\Users\Ирина\source\repos\Leonova_Irina_Task3\Task1\obj\Debug\Task1.csprojAssemblyReference.cache
+C:\Users\Ирина\source\repos\Leonova_Irina_Task3\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\Users\Ирина\source\repos\Leonova_Irina_Task3\Task1\obj\Debug\Task1.exe
+C:\Users\Ирина\source\repos\Leonova_Irina_Task3\Task1\obj\Debug\Task1.pdb

@@ -11,26 +11,15 @@ namespace Task2
         static void Main(string[] args)
         {
             string firstStr = string.Empty;
-            string copyFirstStr = string.Empty;
             string secondStr = string.Empty;
-         
             string simbol = string.Empty;
-            string removeFirstStr = string.Empty;
-            int[] indexOfChar = new int[100];
-            int count = 0;
-            int temp = 2;
-            int enter = 0;
-            int min = 99;
+
 
             Console.WriteLine("Ну давай, удиви меня");
 
             firstStr = Console.ReadLine();
 
-            copyFirstStr = firstStr;
-
             firstStr = firstStr.ToLower();
-
-            removeFirstStr = firstStr;
 
             Console.WriteLine("Продолжай удивлять");
 
@@ -38,53 +27,28 @@ namespace Task2
 
             secondStr = secondStr.ToLower();
 
-            secondStr = secondStr.Replace("  ", string.Empty);
+            secondStr = secondStr.Replace("  ", string.Empty);  
 
-            char[] arrSecondStr = secondStr.ToCharArray();
+            char[] arrSecondStr = secondStr.Distinct().ToArray();
 
-            for (int i = 0; i < arrSecondStr.Length; i++)
+            try
             {
-
-                min = indexOfChar[0];
-                simbol = arrSecondStr[i].ToString();
-
-                if (removeFirstStr.IndexOf(arrSecondStr[i]) < min)
+                for (int i = 0; i < arrSecondStr.Length; i++)
                 {
-                    enter = 0;
-                    temp += 2;
-                }
-                while (removeFirstStr.IndexOf(arrSecondStr[i]) != -1)
-
-                {
-                    if (enter == 0)
+                    if (firstStr.Contains(arrSecondStr[i]))
                     {
-                        enter = 1;
+                        simbol = arrSecondStr[i].ToString();
 
-                        indexOfChar[count] = removeFirstStr.IndexOf(arrSecondStr[i]);
-                        removeFirstStr = removeFirstStr.Remove(indexOfChar[count], 1);
-                        copyFirstStr = copyFirstStr.Insert(indexOfChar[count], simbol);
-                        count++;
-
-                    }
-                    else
-                    {
-                        enter = 1;
-                        indexOfChar[count] = removeFirstStr.IndexOf(arrSecondStr[i]) + temp;
-
-                        removeFirstStr = removeFirstStr.Remove(removeFirstStr.IndexOf(arrSecondStr[i]), 1);
-
-                        copyFirstStr = copyFirstStr.Insert(indexOfChar[count], simbol);
-                        temp += 2;
-                        count++;
+                        firstStr = firstStr.Replace(simbol, simbol + simbol);
                     }
                 }
-
-
             }
-
-
-         // Console.WriteLine(firstStr);
-            Console.WriteLine(copyFirstStr);
+            catch
+            {
+                Console.WriteLine("Я сломался");
+            }
+            Console.WriteLine(firstStr);
+            Console.ReadKey();
 
         }
     }

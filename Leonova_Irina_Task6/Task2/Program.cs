@@ -10,7 +10,7 @@ namespace Task2
     {
         public static void Main(string[] args)
         {
-            ISeries progression = new GeometricalProgression(2, 2);
+            ISeries progression = new GeometricalProgression(2,2);
             Console.WriteLine("Геометрическая прогрессия:");
             PrintSeries(progression);
 

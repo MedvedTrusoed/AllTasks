@@ -33,10 +33,12 @@ namespace Task3
         {
             currentIndex = 1;
         }
-
-        public double GetElement(int index)
+        public double this[int index]
         {
-            return start + step * index;
+            get
+            {
+                return start + step * index;
+            }
         }
     }
 }

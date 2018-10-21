@@ -40,11 +40,10 @@ namespace Task3
             currentIndex = 0;
         }
 
-
-        public double GetElement(int index)
-        {
-            return series[index - 1];
-        }
+        public double this[int index]
+		{
+			get { return series[index]; }
+		}
     }
 
 }

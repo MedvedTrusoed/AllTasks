@@ -8,10 +8,10 @@ namespace Task2
 {
     public class GeometricalProgression : ISeries
     {
-        double start, step;
+        int start, step;
         int currentIndex;
 
-        public GeometricalProgression(double start, double step)
+        public GeometricalProgression(int start, int step)
         {
             this.start = start;
             this.step = step;
@@ -25,7 +25,7 @@ namespace Task2
 
         public bool MoveNext()
         {
-            currentIndex *= 2;
+            currentIndex *= step;
             return true;
         }
 

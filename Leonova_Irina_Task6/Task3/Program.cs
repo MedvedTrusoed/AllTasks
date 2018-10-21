@@ -18,11 +18,11 @@ namespace Task3
 
             ISeries list = new List(new double[] { 5, 8, 6, 3, 1 });
             IIndexable list2 = new List(new double[] { 5, 8, 6, 3, 1 });
+            var a = new int[] { 6, 8 };
+            var s =a[2];
             Console.WriteLine("List:");
             PrintSeries(list);
 
-            Console.WriteLine($"Элемент прогрессии: {progression2.GetElement(4)}");
-            Console.WriteLine($"Элемент списка: {list2.GetElement(4)}");
         }
 
         static void PrintSeries(ISeries series)
@@ -46,8 +46,6 @@ namespace Task3
 
     public interface IIndexable
     {
-        double GetElement(int index);
-
+        double this[int index] { get; }
     }
-
 }

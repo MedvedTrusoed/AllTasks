@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task1
 {
-    class Program
-    {
+    
         public class DynamicArray<T>
         {
             private T[] arr;
@@ -142,7 +141,8 @@ namespace Task1
             T this[int index] { get; }
         }
 
-
+    class Program
+    {
 
         static void Main(string[] args)
         {

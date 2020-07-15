@@ -116,3 +116,75 @@ h1,h2,h3,h4,h5
     color: black;
     background: white;
 }
+.section{
+    text-align: center;
+    margin: 150px 0;
+}
+.section__header{
+    font-size: 30px;
+   
+}
+.section__text{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    color:#787878;
+    width: 100%;
+    max-width: 640px;
+    margin-left: 24%;
+    padding: 40px 0;
+}
+.section__profSkills{
+    background-color: #e9e9e9;
+    width: 100%;
+   
+}
+.section__skills{
+    padding: 10% 5% 10% 6%;
+    width: 50%;
+    background-color: #f8f9f9;
+    font-weight: 500;
+    font-size: 30px;
+}
+.text_profskills{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+     font-family: 'Montserrat', sans-serif;
+}
+.Poloska{
+    width: 100%;
+    border: 2px solid #d8d8d8;
+   position: relative;
+}
+.numbers{
+    background: #10c9c3;
+    color: white;
+    text-transform: uppercase;
+    padding: 100px 0;
+}
+.numbers__num{
+    font-size: 18px;
+    
+}
+.numbers__title{
+    font-size: 12px;
+    
+   
+}
+.numbers__inside{
+    display: flex;
+ 
+}
+.num__item{
+    flex: 1 1 0;
+    text-align: left;
+    padding-left: 30px;
+}
+.num__img{
+    
+    align-items: center;
+    width:44px;
+    height:40px;
+}

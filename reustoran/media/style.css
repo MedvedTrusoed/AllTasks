@@ -1,0 +1,99 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 160px;
+    height: 87px;
+}
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.nav {
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 16px;
+
+}
+
+.nav__text {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 30px;
+    color: #000;
+    text-decoration: none;
+
+    transition: color .2s linear;
+}
+/*ЧЕТ НЕ ПАШЕТ*/
+.nav__text: after{
+    color: #D1A954;
+    border: 1px solid rgba(209, 169, 84, 0.9);
+box-sizing: border-box;
+    
+}
+
+.nav__text:hover {
+    color: #D1A954;
+}
+.container2{
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+      position: relative;
+}
+.slider{
+    width: 380px;
+    height: 450px;
+    margin: 0 5px;
+    text-align: center;
+ 
+}
+.slider__rect{
+    position: absolute;
+    background: #D1A954;
+    opacity: 90%;
+    z-index: 1;
+    text-align: center;
+    width: 380px;
+    height: 166px;
+    top: 0;
+    right: 0;
+}
+.slider__border{
+    width: 360px;
+    height: 146px;
+    border: 1px solid #fff;
+    margin: 10px 10px;
+     
+  
+}
+.slider__text{
+    
+    color: #fff;
+    line-height: 135%;
+    margin-bottom: 20px;
+}
+.slider__header{
+   
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fff;
+    margin: 20px auto;
+   
+}
